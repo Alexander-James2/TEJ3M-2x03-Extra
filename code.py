@@ -1,8 +1,11 @@
-from machine import Pin, Timer
-led = Pin(15, Pin.OUT)
-timer = Timer()
+from machine import Pin
+import utime
 
-def blink(timer):
-    led.toggle()
+led = Pin(8, Pin.OUT)
+led.low()
 
-timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
+while True:
+    led.value = True
+    time.sleep(1)
+    led.value = False
+    time.sleep(1)
